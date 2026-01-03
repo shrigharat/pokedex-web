@@ -21,3 +21,24 @@ export const pokemonTypeColors: Record<
   steel: { bgColor: '#B7B7CE33', textColor: '#B7B7CE' },
   fairy: { bgColor: '#D685AD33', textColor: '#D685AD' },
 };
+
+export const pokemonTypeGradients: Record<string, string[]> = {
+  normal: ['#A8A77A33', '#C6C6A733', '#A8A77A66'],
+  fire: ['#EE813033', '#FFB26633', '#EE813066'],
+  water: ['#6390F033', '#A7C7F033', '#6390F066'],
+  electric: ['#F7D02C33', '#FFFACD33', '#F7D02C66'],
+  grass: ['#7AC74C33', '#B7E7A033', '#7AC74C66'],
+  ice: ['#96D9D633', '#D0F6F933', '#96D9D666'],
+  fighting: ['#C22E2833', '#E5737333', '#C22E2866'],
+  poison: ['#A33EA133', '#D291BC33', '#A33EA166'],
+  ground: ['#E2BF6533', '#F7E9AD33', '#E2BF6566'],
+  flying: ['#A98FF333', '#D6C2F933', '#A98FF366'],
+  psychic: ['#F9558733', '#FBB6CE33', '#F9558766'],
+  bug: ['#A6B91A33', '#D8EBA233', '#A6B91A66'],
+  rock: ['#B6A13633', '#E2D6A133', '#B6A13666'],
+  ghost: ['#73579733', '#B39DD633', '#73579766'],
+  dragon: ['#6F35FC33', '#B39DFF33', '#6F35FC66'],
+  dark: ['#70574633', '#A89F9466', '#70574666'],
+  steel: ['#B7B7CE33', '#E6E6FA33', '#B7B7CE66'],
+  fairy: ['#D685AD33', '#F7C6E033', '#D685AD66'],
+};
