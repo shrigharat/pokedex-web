@@ -1,5 +1,7 @@
-import { pokemonTypeColors } from '../data/types';
+import { Link } from '@tanstack/react-router';
+import { pokemonTypeColors } from '../data/colors';
 import { usePokemonDetails } from '../queries/get-pokemon';
+import { getHeroImage } from '../utils/hero-image';
 
 const PokemonCard = ({ name }: { name: string }) => {
   const { data, status } = usePokemonDetails(name);
@@ -26,9 +28,15 @@ const PokemonCard = ({ name }: { name: string }) => {
   }
 
   const paddedId = data?.id.toString().padStart(3, '0');
+  const heroImage = getHeroImage(paddedId);
 
   return (
-    <div className="w-full bg-white h-[280px] rounded-lg p-2" key={name}>
+    <Link
+      to="/pokemon/$name"
+      params={{ name }}
+      className="w-full bg-white h-[280px] rounded-lg p-2"
+      key={name}
+    >
       <div
         className="rounded-md"
         style={{
@@ -36,10 +44,7 @@ const PokemonCard = ({ name }: { name: string }) => {
             pokemonTypeColors[data.types[0].type.name].bgColor || '#e5e5e5',
         }}
       >
-        <img
-          src={`https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/${paddedId}.png`}
-          className="w-full h-[200px] object-contain"
-        />
+        <img src={heroImage} className="w-full h-[200px] object-contain" />
       </div>
       <div className="flex flex-col gap-2 mt-2">
         <div className="flex justify-between">
@@ -65,7 +70,7 @@ const PokemonCard = ({ name }: { name: string }) => {
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

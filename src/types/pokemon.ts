@@ -20,6 +20,10 @@ type PokemonDetails = {
       name: string;
     };
   }[];
+  species: {
+    name: string;
+    url: string;
+  };
   types: {
     type: {
       name: string;

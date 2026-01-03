@@ -1,11 +1,16 @@
+import { Link } from '@tanstack/react-router';
+import pokeball from '../assets/pokeball.svg';
+
 const Navbar = () => {
   return (
     <nav className="py-4">
       <div className="mx-auto flex items-center justify-between">
-        {/* Logo/Brand */}
-        <div className="flex items-center">
-          <h1 className="text-3xl font-bold text-primary">Pokédex</h1>
-        </div>
+        <Link to="/">
+          <div className="flex items-center gap-2">
+            <p className="text-3xl font-bold text-primary">Pokédex</p>
+            <img src={pokeball} className="w-6 h-6" />
+          </div>
+        </Link>
 
         {/* Search Bar */}
         <div className="flex-1 max-w-md ml-8">
